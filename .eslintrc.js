@@ -8,10 +8,6 @@ module.exports = {
         "ecmaVersion": 2015
     },
     "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
         "linebreak-style": [
             "error",
             "windows"

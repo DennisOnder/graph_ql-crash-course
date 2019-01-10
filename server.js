@@ -1,13 +1,22 @@
-const express = require('express'); // eslint-disable-line no-undef
-const bodyParser = require('body-parser'); // eslint-disable-line no-undef
+/*eslint-env node*/
+const express = require('express');
+const graphqlHTTP = require('express-graphql');
+const bodyParser = require('body-parser');
+const schema = require('./schema');
 const app = express();
 
 // Config
-require('dotenv').config(); // eslint-disable-line no-undef
+require('dotenv').config();
 
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// Endpoint
+app.use('/graphql', graphqlHTTP({
+    schema, // eslint-disable-line no-undef
+    graphiql: true
+}));
+
 // Server
-app.listen(process.env.PORT, () => console.log(`Server running on port: ${process.env.PORT}`)); // eslint-disable-line no-console, no-undef
+app.listen(process.env.PORT, () => console.log(`Server running on port: ${process.env.PORT}`)); // eslint-disable-line no-console

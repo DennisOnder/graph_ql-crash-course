@@ -4,14 +4,16 @@
   "description": "GraphQL Crash Course",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server"
+    "start": "concurrently \"nodemon server\" \"npm start --prefix client\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DennisOnder/graph_ql-crash-course.git"
   },
   "keywords": [
-    "GraphQL"
+    "GraphQL",
+    "React",
+    "Apollo"
   ],
   "author": "Dennis Onder",
   "license": "ISC",
@@ -26,5 +28,8 @@
     "express": "^4.16.4",
     "express-graphql": "^0.7.1",
     "graphql": "^14.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
   }
 }

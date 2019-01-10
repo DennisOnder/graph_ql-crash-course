@@ -24,9 +24,9 @@ export default function Launch(props) {
           </p>
         </div>
         <div className="col-md-3">
-          {/* <Link to={`/launch/${props.flightNumber}`} className="btn btn-secondary">
+          <Link to={`/launch/${props.flightNumber}`} className="btn btn-secondary">
             Launch Details
-          </Link> */}
+          </Link>
         </div>
       </div>
     </div>

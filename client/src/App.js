@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.scss';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:8000/graphql'
+  uri: '/graphql'
 });
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
           <div className="container">
           <img src={logo} alt="logo" style={{width: 300, display: 'block', margin: 'auto'}} />
           <Route exact path="/" component={Launches} />
-          <Route exact path="/:flight_number" component={LaunchWrapper} />
+          <Route exact path="/launch/:flight_number" component={LaunchWrapper} />
           </div>
         </Router>
       </ApolloProvider>

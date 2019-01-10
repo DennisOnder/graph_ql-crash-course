@@ -4,10 +4,8 @@ const graphqlHTTP = require('express-graphql');
 const bodyParser = require('body-parser');
 const schema = require('./schema');
 const cors = require('cors');
+const path = require('path');
 const app = express();
-
-// Config
-require('dotenv').config();
 
 // Middleware
 app.use(bodyParser.json());
@@ -20,5 +18,14 @@ app.use('/graphql', graphqlHTTP({
     graphiql: true
 }));
 
+// Static folder
+app.use(express.static('public'));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+});
+
+// Port
+const PORT = process.env.PORT || 9000;
+
 // Server
-app.listen(process.env.PORT, () => console.log(`Server running on port: ${process.env.PORT}`)); // eslint-disable-line no-console
+app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)); // eslint-disable-line no-console

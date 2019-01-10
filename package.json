@@ -1,0 +1,27 @@
+{
+  "name": "graph_ql-crash-course",
+  "version": "1.0.0",
+  "description": "GraphQL Crash Course",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DennisOnder/graph_ql-crash-course.git"
+  },
+  "keywords": [
+    "GraphQL"
+  ],
+  "author": "Dennis Onder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DennisOnder/graph_ql-crash-course/issues"
+  },
+  "homepage": "https://github.com/DennisOnder/graph_ql-crash-course#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4"
+  }
+}
